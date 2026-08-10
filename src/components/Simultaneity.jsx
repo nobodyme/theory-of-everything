@@ -3,8 +3,9 @@ import Plate from './Plate.jsx'
 
 const C = 170 // px/s — light
 const V = 55 // px/s — train
-const XL = 115
-const XR = 525
+// flash origins = the train's two ends at strike time (train midpoint at MID, half-length 180)
+const XL = 140
+const XR = 500
 const MID = 320
 
 export default function Simultaneity() {
@@ -47,8 +48,8 @@ export default function Simultaneity() {
       setStatus('Same light, same speed — different verdicts on “at the same time.”')
       waveLRef.current?.setAttribute('opacity', 0.9)
       waveRRef.current?.setAttribute('opacity', 0.9)
-      waveLRef.current?.setAttribute('r', 205)
-      waveRRef.current?.setAttribute('r', 205)
+      waveLRef.current?.setAttribute('r', 180)
+      waveRRef.current?.setAttribute('r', 180)
       trainRef.current?.setAttribute('transform', `translate(${MID + V * 1.2},0)`)
       return
     }
@@ -95,9 +96,11 @@ export default function Simultaneity() {
       </p>
       <div className="controls">
         <button className="btn" onClick={play}>
-          ▶ Strike the lightning
+          <span aria-hidden="true">▶ </span>Strike the lightning
         </button>
-        <span className="readout">{status}</span>
+        <span className="readout" aria-live="polite">
+          {status}
+        </span>
       </div>
       <svg viewBox="0 0 640 190" width="100%" aria-hidden="true" style={{ maxHeight: 200 }}>
         <line x1="10" y1="150" x2="630" y2="150" stroke="rgba(233,238,247,.4)" strokeWidth="1.5" />
@@ -106,32 +109,36 @@ export default function Simultaneity() {
           <circle cx="-150" cy="144" r="7" fill="none" stroke="#E9EEF7" strokeWidth="1.4" />
           <circle cx="150" cy="144" r="7" fill="none" stroke="#E9EEF7" strokeWidth="1.4" />
           <circle cx="0" cy="117" r="7" fill="#E9EEF7" />
-          <text x="0" y="90" fill="#8B97B0" fontSize="11" textAnchor="middle">
+          <text x="0" y="88" fill="#8B97B0" fontSize="15" textAnchor="middle">
             THEO (TRAIN)
           </text>
         </g>
         <circle cx="320" cy="164" r="7" fill="#E9EEF7" />
-        <text x="320" y="184" fill="#8B97B0" fontSize="11" textAnchor="middle">
+        <text x="320" y="186" fill="#8B97B0" fontSize="15" textAnchor="middle">
           MIRA (PLATFORM)
         </text>
         <g ref={boltLRef} opacity="0">
-          <path d="M118 20 l-8 26 h10 l-9 30" stroke="#FFC46B" strokeWidth="2.5" fill="none" />
+          <path d="M147 20 l-8 26 h10 l-9 30" stroke="#FFC46B" strokeWidth="2.5" fill="none" />
         </g>
         <g ref={boltRRef} opacity="0">
-          <path d="M522 20 l-8 26 h10 l-9 30" stroke="#FFC46B" strokeWidth="2.5" fill="none" />
+          <path d="M507 20 l-8 26 h10 l-9 30" stroke="#FFC46B" strokeWidth="2.5" fill="none" />
         </g>
         <circle ref={waveLRef} cx={XL} cy="150" r="0" fill="none" stroke="#FFC46B" strokeWidth="1.8" opacity="0" />
         <circle ref={waveRRef} cx={XR} cy="150" r="0" fill="none" stroke="#FFC46B" strokeWidth="1.8" opacity="0" />
       </svg>
       <div className="duo">
         <div className="verdict live">
-          <h5>Mira's report</h5>
-          <div className="big">{mira}</div>
+          <div className="vhead">Mira's report</div>
+          <div className="big" aria-live="polite">
+            {mira}
+          </div>
           <small>standing midway between the strikes</small>
         </div>
         <div className="verdict live">
-          <h5>Theo's report</h5>
-          <div className="big">{theo}</div>
+          <div className="vhead">Theo's report</div>
+          <div className="big" aria-live="polite">
+            {theo}
+          </div>
           <small>riding toward one flash, away from the other</small>
         </div>
       </div>

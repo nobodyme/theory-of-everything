@@ -45,7 +45,7 @@ export default function Elevator() {
           Rocket accelerating in deep space
         </button>
         <button className="btn" onClick={drop}>
-          ● Release ball
+          <span aria-hidden="true">● </span>Release ball
         </button>
       </div>
       <svg viewBox="0 0 640 220" width="100%" aria-hidden="true" style={{ maxHeight: 230 }}>
@@ -55,7 +55,7 @@ export default function Elevator() {
           opacity={rocket ? 0 : 1}
           style={{ transition: 'opacity .3s' }}
         />
-        <text x="320" y="214" fill="#8B97B0" fontSize="11" textAnchor="middle">
+        <text x="320" y="216" fill="#8B97B0" fontSize="15" textAnchor="middle">
           {rocket ? 'DEEP SPACE · THRUST a = 9.8 m/s²' : 'EARTH · g = 9.8 m/s²'}
         </text>
         <g opacity={rocket ? 1 : 0} style={{ transition: 'opacity .3s' }}>
@@ -67,7 +67,7 @@ export default function Elevator() {
         <path d="M291 176 a9 9 0 0 1 18 0" fill="#E9EEF7" />
         <circle cx="300" cy="160" r="6" fill="#E9EEF7" />
         <circle ref={ballRef} cx="345" cy="70" r="7" fill="#FFC46B" />
-        <text x="320" y="34" fill="#8B97B0" fontSize="11" textAnchor="middle">
+        <text x="320" y="34" fill="#8B97B0" fontSize="15" textAnchor="middle">
           INSIDE: IDENTICAL, EITHER WAY
         </text>
       </svg>

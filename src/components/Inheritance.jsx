@@ -35,9 +35,10 @@ const DOSSIERS = [
     ),
     crack: (
       <p>
-        Since 1859, astronomers knew Mercury's orbit drifts by a tiny amount Newton's gravity
-        cannot explain — 43 seconds of arc per century. A small, stubborn, unexplained
-        residue. Remember it; it returns at the end.
+        Since 1859, astronomers knew Mercury's orbit drifts by a tiny amount Newton's
+        gravity cannot explain — Le Verrier clocked it near 38 seconds of arc per century;
+        by 1882 the books settled on 43. A small, stubborn, unexplained residue. Remember
+        it; it returns at the end.
       </p>
     ),
   },
@@ -46,10 +47,11 @@ const DOSSIERS = [
     who: 'Maxwell — light appears in his equations',
     gave: (
       <p>
-        Four equations unified electricity and magnetism — and out of the mathematics dropped
-        a wave traveling at exactly <b>c ≈ 300,000 km/s</b>. That was the measured speed of
-        light. Conclusion: light <b>is</b> an electromagnetic wave. Einstein studied these
-        equations obsessively at university, partly outside the official syllabus.
+        His equations — later distilled to the famous four — unified electricity and
+        magnetism, and out of the mathematics dropped a wave traveling at exactly{' '}
+        <b>c ≈ 300,000 km/s</b>. That was the measured speed of light. Conclusion: light{' '}
+        <b>is</b> an electromagnetic wave. Einstein studied these equations obsessively at
+        university, partly outside the official syllabus.
       </p>
     ),
     crack: (
@@ -73,21 +75,22 @@ const DOSSIERS = [
     ),
     crack: (
       <p>
-        They found <b>nothing</b>. No ether wind, in any season, in any direction. Light's
-        speed came out the same every time. One of the most famous null results in science —
-        and in 1905 it was still an open wound in physics.
+        They found <b>nothing</b>. No ether wind, whichever way they turned the instrument,
+        morning or evening — and every later repetition, season after season, agreed.
+        Light's speed came out the same every time. One of the most famous null results in
+        science — and in 1905 it was still an open wound in physics.
       </p>
     ),
   },
   {
-    yr: '1890s',
+    yr: '1889–1904',
     who: 'Lorentz & FitzGerald — the patch',
     gave: (
       <p>
-        To save the ether, Lorentz and FitzGerald proposed that objects moving through it
-        physically <b>shrink</b> in the direction of motion — by just the right amount to
-        hide the ether wind. Lorentz worked out the full mathematics: the{' '}
-        <b>Lorentz transformations</b>. The equations Einstein would need{' '}
+        To save the ether, FitzGerald (1889) and Lorentz (1892) proposed that objects moving
+        through it physically <b>shrink</b> in the direction of motion — by just the right
+        amount to hide the ether wind. Lorentz built out the mathematics in stages, complete
+        by 1904: the <b>Lorentz transformations</b>. The equations Einstein would need{' '}
         <b>already existed</b>.
       </p>
     ),
@@ -134,11 +137,11 @@ function Dossier({ d, open, onToggle }) {
         <div>
           <div className="dossier-cols">
             <div className="gave">
-              <h4>What it established</h4>
+              <div className="colhead">What it established</div>
               {d.gave}
             </div>
             <div className="crack">
-              <h4>The crack</h4>
+              <div className="colhead">The crack</div>
               {d.crack}
             </div>
           </div>

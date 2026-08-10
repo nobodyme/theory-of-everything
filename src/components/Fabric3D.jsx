@@ -258,7 +258,8 @@ export default function Fabric3D() {
       glow.position.copy(star.position)
       glow.scale.setScalar(3 + m * 13)
       glow.material.opacity = m > 0.03 ? 0.9 : 0
-      planetAng += dt * (0.18 + m * 1.15) // deeper well, faster orbit — Kepler recovered
+      // Kepler at fixed radius: angular speed ∝ √M; no mass, no orbit
+      planetAng += dt * (0.02 + 1.25 * Math.sqrt(m))
       const py = warpY(ORBIT_R, 0, m) + 0.55
       planet.position.set(Math.cos(planetAng) * ORBIT_R, py, Math.sin(planetAng) * ORBIT_R)
       if (dt > 0) {
@@ -291,11 +292,24 @@ export default function Fabric3D() {
       renderer.render(scene, camera)
     }
 
+    let vio = null
     if (reduced) {
       planetAng = 0.8
       renderOnce()
     } else {
-      raf = requestAnimationFrame(frame)
+      // run the simulation only while the plate is on screen
+      let running = false
+      vio = new IntersectionObserver(([e]) => {
+        if (e.isIntersecting && !running) {
+          running = true
+          last = performance.now()
+          raf = requestAnimationFrame(frame)
+        } else if (!e.isIntersecting && running) {
+          running = false
+          cancelAnimationFrame(raf)
+        }
+      })
+      vio.observe(mount)
     }
 
     const ro = new ResizeObserver(() => {
@@ -308,6 +322,7 @@ export default function Fabric3D() {
 
     return () => {
       cancelAnimationFrame(raf)
+      vio?.disconnect()
       ro.disconnect()
       el.removeEventListener('pointerdown', onDown)
       el.removeEventListener('pointermove', onMove)

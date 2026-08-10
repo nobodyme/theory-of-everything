@@ -4,7 +4,13 @@ export default function Hero() {
       <div className="wrap">
         <div className="hero-kicker">
           <span>Bern, Switzerland</span>
+          <span className="sep" aria-hidden="true">
+            ·
+          </span>
           <span className="amber">June 1905</span>
+          <span className="sep" aria-hidden="true">
+            ·
+          </span>
           <span>Swiss Federal Patent Office</span>
         </div>
         <h1>
@@ -18,9 +24,9 @@ export default function Hero() {
         <p className="hero-sub">
           Relativity was not conjured from nothing. It was assembled — from{' '}
           <b>a 270-year-old idea about ships</b>, <b>four famous equations about light</b>,{' '}
-          <b>one experiment that kept failing</b>, and a day job spent judging patents for{' '}
-          <b>synchronized railway clocks</b>. This is the story of the inputs, the
-          contradiction, and the move.
+          <b>one experiment that kept failing</b>, and a day job in a patent office awash in
+          schemes for <b>synchronizing railway clocks</b>. This is the story of the inputs,
+          the contradiction, and the move.
         </p>
       </div>
       <div className="hero-cue">

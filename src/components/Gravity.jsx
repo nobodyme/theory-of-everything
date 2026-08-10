@@ -7,7 +7,7 @@ export default function Gravity() {
       <div className="wrap">
         <div className="reveal">
           <div className="eyebrow">
-            <span className="chno">Chapter IV</span> The ten-year sequel · 1907–1915
+            <span className="chno">Chapter IV</span> The eight-year sequel · 1907–1915
           </div>
           <h2>
             Then he came <em>for gravity</em>
@@ -26,25 +26,26 @@ export default function Gravity() {
         <div className="prose reveal" style={{ marginTop: 48 }}>
           <p>
             Turning that hunch into equations took eight more years and mathematics Einstein
-            didn't yet own — the curved-surface geometry of Riemann, which his university
-            friend <b>Marcel Grossmann</b> helped him learn. (Even here: existing knowledge,
-            borrowed and repurposed.) The result, November 1915: the field equations of
-            general relativity.
+            didn't yet own — the curved-surface geometry of Riemann, which{' '}
+            <b>Marcel Grossmann</b> helped him learn: the same friend whose father had
+            gotten him the patent job. (Even here: existing knowledge, borrowed and
+            repurposed.) The result, November 1915: the field equations of general
+            relativity.
           </p>
         </div>
 
         <Fabric3D />
 
-        <div className="stat-line reveal">
-          <div className="stat">
+        <div className="stat-line reveal-stagger">
+          <div className="stat" style={{ '--i': 0 }}>
             <div className="sv">43″</div>
             <div className="sl">Mercury's unexplained drift per century — nailed by the equations, untuned</div>
           </div>
-          <div className="stat">
+          <div className="stat" style={{ '--i': 1 }}>
             <div className="sv">8 yrs</div>
             <div className="sl">From the happiest thought to the field equations</div>
           </div>
-          <div className="stat">
+          <div className="stat" style={{ '--i': 2 }}>
             <div className="sv">1.75″</div>
             <div className="sl">Predicted bending of starlight grazing the Sun</div>
           </div>
@@ -54,11 +55,12 @@ export default function Gravity() {
           <div className="eclipse-disc" aria-hidden="true" />
           <div className="eclipse-copy">
             <div className="nyt-sub">The New York Times · November 10, 1919</div>
-            <div className="nyt">Lights all askew in the heavens</div>
+            <h3 className="nyt">Lights all askew in the heavens</h3>
             <p>
               <b>May 1919.</b> The theory's boldest prediction: starlight grazing the Sun
-              should bend by a precise, tiny angle. Arthur Eddington photographed stars
-              beside the eclipsed Sun — and they had shifted, by Einstein's amount.
+              should bend by a precise, tiny angle. Two British expeditions — Arthur
+              Eddington on Príncipe, a sister team at Sobral in Brazil — photographed stars
+              beside the eclipsed Sun. They had shifted, by Einstein's amount, not Newton's.
               Overnight, a patent clerk's rebuild of space and time became front-page news
               worldwide.
             </p>

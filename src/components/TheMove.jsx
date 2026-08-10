@@ -13,15 +13,15 @@ export default function TheMove() {
             Keep both facts. <em>Sacrifice time.</em>
           </h2>
           <p className="lede">
-            Einstein's paper — “On the Electrodynamics of Moving Bodies” — cites almost no
-            experiments and contains no new data. Instead it makes an audacious accounting
-            decision. Take two things everyone already half-believed and declare them both
-            absolutely true:
+            Einstein's paper — “On the Electrodynamics of Moving Bodies” — cites not a
+            single source: no footnotes, no references, no new data. Instead it makes an
+            audacious accounting decision. Take two things everyone already half-believed
+            and declare them both absolutely true:
           </p>
         </div>
 
-        <div className="postulates reveal">
-          <div className="postulate">
+        <div className="postulates reveal-stagger">
+          <div className="postulate" style={{ '--i': 0 }}>
             <div className="pnum">1</div>
             <h3>The laws of physics are the same in every steadily moving room.</h3>
             <p>
@@ -33,7 +33,7 @@ export default function TheMove() {
               Source — <b>the ship's cabin, 1632</b>, promoted to law
             </div>
           </div>
-          <div className="postulate">
+          <div className="postulate" style={{ '--i': 1 }}>
             <div className="pnum">2</div>
             <h3>Every observer measures light at the same speed, c.</h3>
             <p>
@@ -41,7 +41,8 @@ export default function TheMove() {
               the same for everyone, no matter how they move. Full stop.
             </p>
             <div className="src">
-              Source — <b>Michelson &amp; Morley's “failure,” 1887</b>, promoted to law
+              Source — <b>Maxwell's equations, 1865</b>, taken at their word. Michelson
+              &amp; Morley's “failure” stood by as silent confirmation
             </div>
           </div>
         </div>

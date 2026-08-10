@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Starfield from './components/Starfield.jsx'
+import MobileProgress from './components/MobileProgress.jsx'
 import Hero from './components/Hero.jsx'
 import Prologue from './components/Prologue.jsx'
 import Inheritance from './components/Inheritance.jsx'
@@ -35,7 +36,7 @@ export default function App() {
       },
       { threshold: 0.1 }
     )
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => io.observe(el))
     return () => io.disconnect()
   }, [])
 
@@ -66,11 +67,17 @@ export default function App() {
       </div>
       <nav className="rail" aria-label="Chapters">
         {CHAPTERS.map((c) => (
-          <a key={c.id} href={`#${c.id}`} className={active === c.id ? 'on' : ''}>
+          <a
+            key={c.id}
+            href={`#${c.id}`}
+            className={active === c.id ? 'on' : ''}
+            aria-current={active === c.id ? 'true' : undefined}
+          >
             <span className="rail-yr">{c.year}</span> {c.label}
           </a>
         ))}
       </nav>
+      <MobileProgress chapter={activeChapter} />
       <main>
         <Hero />
         <Prologue />

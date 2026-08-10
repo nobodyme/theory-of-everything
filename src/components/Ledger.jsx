@@ -39,7 +39,7 @@ export default function Ledger() {
           <div className="eyebrow">
             <span className="chno">Chapter V</span> The ledger, closed · 1919
           </div>
-          <h2>
+          <h2 className="h2-flip">
             Old parts, <em>new machine</em>
           </h2>
           <p className="lede">
@@ -49,9 +49,9 @@ export default function Ledger() {
           </p>
         </div>
 
-        <div className="ledger-grid reveal">
-          {ROWS.map((r) => (
-            <div className="ledger-cell" key={r.knew}>
+        <div className="ledger-grid reveal-stagger">
+          {ROWS.map((r, i) => (
+            <div className="ledger-cell" key={r.knew} style={{ '--i': i }}>
               <div className="lk">He knew</div>
               <div className="lt">{r.knew}</div>
               <div className="arrow">↓ became</div>

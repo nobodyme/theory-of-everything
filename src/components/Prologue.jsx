@@ -15,15 +15,18 @@ export default function Prologue() {
             <p>
               In 1905, Albert Einstein was 26 and, by every official measure, a failure.
               After graduating he had applied for university assistantships across Europe —{' '}
-              <b>every single one rejected him</b>. He survived on tutoring until a friend's
-              father pulled strings to get him a desk at the Swiss patent office, examining
-              inventions six days a week.
+              <b>not one said yes; most never even replied</b>. He scraped by on temporary
+              teaching and tutoring until his friend Marcel Grossmann's father pulled
+              strings to get him a desk at the Swiss patent office, examining inventions six
+              days a week. Remember the name Grossmann — it returns.
             </p>
             <p>
               But look closer at that desk. Bern was wiring itself with electric clocks, and
-              Switzerland — a country obsessed with trains and punctuality — was flooded with
-              patents for <b>keeping distant clocks in step</b> using electrical signals.
-              Einstein's job was to ask, over and over: <i>what does it actually take for two
+              Switzerland — a country obsessed with trains and punctuality — was flooded
+              with patents for <b>keeping distant clocks in step</b> using electrical
+              signals. Which ones crossed Einstein's desk, no record says — his assessments
+              were routinely destroyed — but the question those patents posed, over and
+              over, filled the office he worked in: <i>what does it actually take for two
               separated clocks to agree on the time?</i> It is hard to invent a better
               training ground for the question that would crack physics open.
             </p>
@@ -50,7 +53,7 @@ export default function Prologue() {
                   Technical Expert, <i>third class</i>
                 </dd>
                 <dt>Duties</dt>
-                <dd>Examination of electromagnetic devices, incl. clock synchronization</dd>
+                <dd>Examination of electrotechnical devices</dd>
                 <dt>Laboratory</dt>
                 <dd>
                   <i>None assigned</i>

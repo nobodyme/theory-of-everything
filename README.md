@@ -34,3 +34,15 @@ npm run dev        # local dev server
 npm run build      # production build → dist/
 npm run build:single   # self-contained single-file build → dist-single/
 ```
+
+## Deploy
+
+Every push to `main` builds the site and publishes `dist/` to GitHub Pages via
+`.github/workflows/deploy.yml`. The workflow can also be run on demand from the
+Actions tab. Vite is configured with `base: './'`, so the build works unchanged
+at the project-page path `https://<owner>.github.io/theory-of-everything/`.
+
+The first run enables Pages itself (source: GitHub Actions). Note that Pages on
+a **private** repository requires a paid GitHub plan — on the free plan, make
+the repository public before the deploy will succeed.
+

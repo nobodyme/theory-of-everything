@@ -57,8 +57,10 @@ const DOSSIERS = [
     crack: (
       <p>
         The equations state one speed, c — but speed <b>relative to what?</b> Physicists
-        answered: relative to an invisible medium filling space, the “luminiferous ether.”
-        Which meant the ether could, in principle, be detected. So they tried.
+        had an answer waiting, decades older than Maxwell: light is a wave, and a wave —
+        like sound in air — surely needs a medium. So c must be light's speed relative to
+        that long-assumed medium, the “luminiferous ether.” Which meant the ether could, in
+        principle, be detected. So they tried.
       </p>
     ),
   },

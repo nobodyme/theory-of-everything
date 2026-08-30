@@ -59,14 +59,15 @@ export default function Starfield() {
       return new THREE.Points(geo, mat)
     }
 
-    const farStars = makeStars(1500, {
-      size: 1.3, color: 0xbfcbe2, opacity: 0.7, spread: 240, depth: 260,
+    // kept deliberately quiet — the stars sit behind long-form text
+    const farStars = makeStars(1150, {
+      size: 1.1, color: 0xbfcbe2, opacity: 0.5, spread: 240, depth: 260,
     })
-    const nearStars = makeStars(320, {
-      size: 2.6, color: 0xe9eef7, opacity: 0.85, spread: 200, depth: 160,
+    const nearStars = makeStars(230, {
+      size: 2.1, color: 0xe9eef7, opacity: 0.6, spread: 200, depth: 160,
     })
-    const amberStars = makeStars(85, {
-      size: 3.2, color: 0xffc46b, opacity: 0.75, spread: 210, depth: 180,
+    const amberStars = makeStars(70, {
+      size: 2.6, color: 0xffc46b, opacity: 0.52, spread: 210, depth: 180,
     })
     scene.add(farStars, nearStars, amberStars)
 
@@ -91,12 +92,12 @@ export default function Starfield() {
         depthWrite: false,
       })
     const neb1 = new THREE.Sprite(
-      nebulaMat(glowTexture('rgba(38,58,110,0.55)', 'rgba(38,58,110,0)'), 0.5)
+      nebulaMat(glowTexture('rgba(38,58,110,0.55)', 'rgba(38,58,110,0)'), 0.38)
     )
     neb1.position.set(-70, 30, -120)
     neb1.scale.setScalar(260)
     const neb2 = new THREE.Sprite(
-      nebulaMat(glowTexture('rgba(120,84,40,0.4)', 'rgba(120,84,40,0)'), 0.34)
+      nebulaMat(glowTexture('rgba(120,84,40,0.4)', 'rgba(120,84,40,0)'), 0.26)
     )
     neb2.position.set(90, -40, -140)
     neb2.scale.setScalar(220)

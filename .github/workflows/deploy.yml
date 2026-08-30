@@ -33,13 +33,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          # Turns Pages on with the "GitHub Actions" source the first time this
-          # runs, so the repo needs no manual setup in Settings.
-          enablement: true
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

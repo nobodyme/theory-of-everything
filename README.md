@@ -42,7 +42,12 @@ Every push to `main` builds the site and publishes `dist/` to GitHub Pages via
 Actions tab. Vite is configured with `base: './'`, so the build works unchanged
 at the project-page path `https://<owner>.github.io/theory-of-everything/`.
 
-The first run enables Pages itself (source: GitHub Actions). Note that Pages on
-a **private** repository requires a paid GitHub plan — on the free plan, make
-the repository public before the deploy will succeed.
+One-time setup, required before the first deploy can succeed: in
+**Settings → Pages**, set **Source** to **GitHub Actions**. A workflow cannot
+turn Pages on for the repository itself — its `GITHUB_TOKEN` is refused with
+`Resource not accessible by integration` — so this step has to be done in the
+web UI. Re-run the workflow afterwards.
+
+Pages on a **private** repository also requires a paid GitHub plan. On the free
+plan, make the repository public first, or the deploy will be rejected.
 
